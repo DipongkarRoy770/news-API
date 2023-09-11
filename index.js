@@ -18,6 +18,7 @@ function dataLoad() {
 const handleId = (id) => {
     //console.log('id clik now', element)
     const newsContainer = document.getElementById('news-container')
+    newsContainer.innerHTML=''
     fetch(`https://openapi.programming-hero.com/api/news/category/${id}`)
 
         .then(res => res.json())
@@ -47,7 +48,7 @@ const handleId = (id) => {
 const modalShow = (id) => {
     //console.log('modal kaj kore', id)
     const modalContainer = document.getElementById('modal-container')
-
+    modalContainer.innerHTML=''
     fetch(`https://openapi.programming-hero.com/api/news/${id}`)
      .then(res =>res.json())
       .then(data=>{
